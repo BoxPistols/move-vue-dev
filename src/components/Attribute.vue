@@ -4,7 +4,11 @@
   <p><img align="" :src="imgName"></p>
   <p><a :href="myURL" :target="myTarget">Link</a></p>
   <p :class="[{'through': throughOn}]">Bind Class</p>
-  <p :class="['through': throughOn}]">Bind Class</p>
+  <p :class="[hoge, moge]">Bind Multi Class</p>
+
+  <h2>Model</h2>
+  <input type="text" v-model="myModel"> 
+  <p>{{ myModel }}</p>
 </div>
 </template>
 
@@ -16,7 +20,9 @@
     myURL: "https://google.com",
     myTarget: '_blank',
     myColor: 'orange',
-    throughOn: true
+    throughOn: true,
+    hoge: true,
+    moge: true,
     }
   },
   }
@@ -24,7 +30,7 @@
 
 
 <style scoped lang="stylus">
-.through
+.through, .hoge, .moge
   color pink
     
 </style>
