@@ -1,6 +1,5 @@
 <template>
   <div class="bool">
-
     <h2>v-if v-else / data: bool</h2>
     <label><input type="checkbox" v-model="myVisible" />表示する</label>
     <p v-if="myVisible">ON!</p>
@@ -11,7 +10,6 @@
 
     <h2>Like</h2>
     <button v-if="isShow" @click="like">Like!</button>
-
   </div>
 </template>
 
@@ -21,15 +19,15 @@ export default {
     return {
       myVisible: true,
       vShow: false,
-      isShow: true,
-    }
+      isShow: true
+    };
   },
   methods: {
     like() {
-      this.isShow = false
+      this.isShow = false;
     }
-  },
-}
+  }
+};
 </script>
 
 <style scoped lang="stylus">
