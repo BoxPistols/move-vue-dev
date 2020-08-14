@@ -1,18 +1,29 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <!-- <Bool /> -->
+    <Attribute/>
+    <For />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+// import Bool from "@/components/Bool"
+import Attribute from "@/components/Attribute"
+import For from "@/components/For"
 
 export default {
   name: "Home",
   components: {
-    HelloWorld
-  }
-};
+    // Bool,
+    Attribute,
+    For,
+  },
+}
 </script>
+
+<style scoped lang="stylus">
+img
+  width 60px
+</style>
