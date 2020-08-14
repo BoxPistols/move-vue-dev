@@ -17,6 +17,12 @@
       <br />
       textLength: {{ myTextArea.length }}
     </p>
+
+    <h3>CheckBox</h3>
+    <label><input type="checkbox" v-model="myCheckBox" value="A">A</label><br>
+    <label><input type="checkbox" v-model="myCheckBox" value="B">B</label><br>
+    <label><input type="checkbox" v-model="myCheckBox" value="C">C</label><br>
+    CheckBox is: {{ myCheckBox }}
   </section>
 </div>
 </template>
@@ -27,7 +33,8 @@ export default {
     return {
       // v-model
       myModel: "",
-      myTextArea: ""
+      myTextArea: "",
+      myCheckBox: [],
     };
   }
 };
