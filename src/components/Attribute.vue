@@ -1,14 +1,22 @@
 <template>
   <div>
-    <h2 :style="{ color: myColor }">属性</h2>
-    <p><img align="" :src="imgName" /></p>
-    <p><a :href="myURL" :target="myTarget">Link</a></p>
-    <p :class="[{ through: throughOn }]">Bind Class</p>
-    <p :class="[hoge, moge]">Bind Multi Class</p>
 
-    <h2>Model</h2>
-    <input type="text" v-model="myModel" />
-    <p>{{ myModel }}</p>
+    <section>
+      <h2 :style="{ color: myColor }">Attribute(属性)</h2>
+      <p>
+        <img align :src="imgName" />
+      </p>
+      <p>
+        <a :href="myURL" :target="myTarget">Link</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Class</h2>
+      <p :class="[{'through': throughOn}]">Bind Class by Data</p>
+      <p :class="['hoge', {'moge': moge}]">Bind Multi Class</p>
+    </section>
+
   </div>
 </template>
 
@@ -16,19 +24,27 @@
 export default {
   data() {
     return {
+      // Attribute
       imgName: "https://dummyimage.com/360x120/000/fff",
       myURL: "https://google.com",
       myTarget: "_blank",
       myColor: "orange",
       throughOn: true,
       hoge: true,
-      moge: true
+      moge: true,
+      // v-model
+      myModel: "",
+      myTextArea: '',
     };
   }
 };
 </script>
 
 <style scoped lang="stylus">
-.through, .hoge, .moge
+section
+  border 1px solid #eeeeee
+.through
   color pink
+.hoge
+  font-weight 600
 </style>

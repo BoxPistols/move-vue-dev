@@ -1,5 +1,5 @@
 <template>
-  <div class="For">
+  <div class="object">
     <h2>Loop</h2>
     <table>
       <tr v-for="(item, index) in objArray" v-bind:key="index">
@@ -34,10 +34,16 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-table
+>>>.object
+  display flex
+  justify-content center
+>>>table
   width 50%
   max-width 400px
   margin auto
-td
-  border 1px solid
+  border-collapse collapse
+  td
+    padding 8px 12px
+    border 1px solid #ccc
+    white-space nowrap
 </style>
