@@ -1,30 +1,44 @@
 <template>
-<div class="about">
-  <h1>This is an about page</h1>
-  <section>
-    <h2>Form / Model</h2>
+  <div class="about">
+    <h1>This is an about page</h1>
+    <section>
+      <h2>Form / Model</h2>
 
-    <input type="text" v-model="myModel" placeholder="input" />
-    <p>
-      input view: {{ myModel }}
+      <input type="text" v-model="myModel" placeholder="input" />
+      <p>
+        input view: {{ myModel }}
+        <br />
+        textLength: {{ myModel.length }}
+      </p>
+
+      <textarea type="text" v-model="myTextArea" placeholder="textarea" />
+      <p>
+        textarea view: {{ myTextArea }}
+        <br />
+        textLength: {{ myTextArea.length }}
+      </p>
+
+      <h3>CheckBox</h3>
+      <label>
+        <input type="checkbox" v-model="myCheckBox" value="A" />A
+      </label>
       <br />
-      textLength: {{ myModel.length }}
-    </p>
-
-    <textarea type="text" v-model="myTextArea" placeholder="textarea" />
-    <p>
-      textarea view: {{ myTextArea }}
+      <label>
+        <input type="checkbox" v-model="myCheckBox" value="B" />B
+      </label>
       <br />
-      textLength: {{ myTextArea.length }}
-    </p>
-
-    <h3>CheckBox</h3>
-    <label><input type="checkbox" v-model="myCheckBox" value="A">A</label><br>
-    <label><input type="checkbox" v-model="myCheckBox" value="B">B</label><br>
-    <label><input type="checkbox" v-model="myCheckBox" value="C">C</label><br>
-    CheckBox is: {{ myCheckBox }}
-  </section>
-</div>
+      <label>
+        <input type="checkbox" v-model="myCheckBox" value="C" />C
+      </label>
+      <br />
+      CheckBox is: {{ myCheckBox }}
+      <h3>Agree</h3>
+      <label>
+        <input type="checkbox" v-model="myAgree" />同意します
+      </label>
+      <button :disabled="myAgree===false">送信</button>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -35,6 +49,7 @@ export default {
       myModel: "",
       myTextArea: "",
       myCheckBox: [],
+      myAgree: false
     };
   }
 };
