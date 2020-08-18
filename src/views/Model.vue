@@ -94,18 +94,18 @@ export default {
   data() {
     return {
       // v-model
-      myModel: "",
-      myTextArea: "",
+      myModel: '',
+      myTextArea: '',
       myCheckBox: [],
       myAgree: false,
-      myRadio: "red",
+      myRadio: 'red',
       // mySelectColor: ""
       mySelectColor: [],
-      myText: "",
+      myText: '',
       myTextNum: 0
-    };
+    }
   }
-};
+}
 </script>
 
 <style scoped lang="stylus">
