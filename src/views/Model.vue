@@ -72,6 +72,18 @@
             <option value="orange">Orange</option>
           </select>
         </section>
+
+        <section>
+          <h3>修飾子</h3>
+          <input type="text" v-model.lazy.trim="myText" />
+          <p>表示タイミング： {{ myText }}</p>
+          <p>lazy = 入力後</p>
+          <p>trim = 前後トリム</p>
+
+          <input type="number" v-model.number="myTextNum" />
+          <p>100プラス： {{ 100 + myTextNum }}</p>
+          <p>number = 数値化</p>
+        </section>
       </div>
     </div>
   </div>
@@ -88,7 +100,9 @@ export default {
       myAgree: false,
       myRadio: "red",
       // mySelectColor: ""
-      mySelectColor: []
+      mySelectColor: [],
+      myText: "",
+      myTextNum: 0
     };
   }
 };
@@ -98,6 +112,9 @@ export default {
 .model
   display flex
   flex-direction column  
+p
+  line-height 1.2
+  margin 4px 0 8px
 
 .contents
   display flex
