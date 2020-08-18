@@ -1,43 +1,79 @@
 <template>
-  <div class="about">
+  <div class="model">
     <h1>This is an about page</h1>
-    <section>
-      <h2>Form / Model</h2>
+    <div class="contents">
+      <section>
+        <h2>Form / Model</h2>
 
-      <input type="text" v-model="myModel" placeholder="input" />
-      <p>
-        input view: {{ myModel }}
+        <input type="text" v-model="myModel" placeholder="input" />
+        <p>
+          input view: {{ myModel }}
+          <br />
+          textLength: {{ myModel.length }}
+        </p>
+
+        <textarea type="text" v-model="myTextArea" placeholder="textarea" />
+        <p>
+          textarea view: {{ myTextArea }}
+          <br />
+          textLength: {{ myTextArea.length }}
+        </p>
+      </section>
+
+      <section>
+        <h3>CheckBox</h3>
+        <label>
+          <input type="checkbox" v-model="myCheckBox" value="A" />A
+        </label>
         <br />
-        textLength: {{ myModel.length }}
-      </p>
-
-      <textarea type="text" v-model="myTextArea" placeholder="textarea" />
-      <p>
-        textarea view: {{ myTextArea }}
+        <label>
+          <input type="checkbox" v-model="myCheckBox" value="B" />B
+        </label>
         <br />
-        textLength: {{ myTextArea.length }}
-      </p>
-
-      <h3>CheckBox</h3>
-      <label>
-        <input type="checkbox" v-model="myCheckBox" value="A" />A
-      </label>
-      <br />
-      <label>
-        <input type="checkbox" v-model="myCheckBox" value="B" />B
-      </label>
-      <br />
-      <label>
-        <input type="checkbox" v-model="myCheckBox" value="C" />C
-      </label>
-      <br />
-      CheckBox is: {{ myCheckBox }}
-      <h3>Agree</h3>
-      <label>
-        <input type="checkbox" v-model="myAgree" />同意します
-      </label>
-      <button :disabled="myAgree===false">送信</button>
-    </section>
+        <label>
+          <input type="checkbox" v-model="myCheckBox" value="C" />C
+        </label>
+        <br />
+        CheckBox is: {{ myCheckBox }}
+        <h3>Agree</h3>
+        <label>
+          <input type="checkbox" v-model="myAgree" />同意します
+        </label>
+        <!-- <button :disabled="myAgree===false">送信</button> -->
+        <button :disabled="!myAgree">送信</button>
+      </section>
+      <section>
+        <h3>Radio select One & chage image</h3>
+        <label>
+          Red
+          <input type="radio" value="red" v-model="myRadio" />
+        </label>
+        <label>
+          Blue
+          <input type="radio" value="blue" v-model="myRadio" />
+        </label>
+        <label>
+          Green
+          <input type="radio" value="green" v-model="myRadio" />
+        </label>
+        <p>Select: {{ myRadio }}</p>img
+        <img v-bind:src=" 'img/' +  myRadio + '.jpg'" alt="myRadio" />
+      </section>
+      <div class="contents">
+        <section>
+          <h3>Select</h3>
+          <p>複数選択時はドラッグでエリア選択かCtrl押しながら</p>
+          <p :style="{color: mySelectColor}">選択カラー={{ mySelectColor }}</p>
+          <select v-model="mySelectColor" multiple>
+            <option value disabled>選択してください</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="orange">Orange</option>
+          </select>
+        </section>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -49,17 +85,32 @@ export default {
       myModel: "",
       myTextArea: "",
       myCheckBox: [],
-      myAgree: false
+      myAgree: false,
+      myRadio: "red",
+      // mySelectColor: ""
+      mySelectColor: []
     };
   }
 };
 </script>
 
 <style scoped lang="stylus">
+.model
+  display flex
+  flex-direction column  
+
+.contents
+  display flex
+  justify-content center
+  flex-wrap wrap
+
 section
-  border 1px solid #eeeeee
+  padding 12px 24px
+  border 1px solid #eee
+
 .through
   color pink
+
 .hoge
   font-weight 600
 </style>
