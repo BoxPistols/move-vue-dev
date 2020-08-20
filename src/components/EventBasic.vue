@@ -6,6 +6,8 @@
       <h3>Count Up</h3>
       <p>Count: {{ count }}</p>
       <button @click="countUp">Plus</button>
+      <!-- with Dummy argument -->
+      <button @click="countUpFn(20)">Plus Func</button>
     </section>
 
     <section>
@@ -32,6 +34,9 @@ export default {
     countUp() {
       this.count++
     },
+    countUpFn(val){
+      this.count += val
+    },
     addLike() {
       this.isLike = true
       likeAction()
@@ -43,7 +48,7 @@ export default {
 <style scoped lang="stylus">
 .model
   display flex
-  flex-direction column  
+  flex-direction column
 p
   line-height 1.2
   margin 4px 0 8px

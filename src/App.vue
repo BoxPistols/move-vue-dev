@@ -1,16 +1,15 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      <p class="splead">|</p>
-      <router-link to="/model">Model</router-link>|
-      <p class="splead">|</p>
-      <router-link to="/comp">Comp</router-link>|
-      <p class="splead">|</p>
-      <router-link to="/event">Event</router-link>
-    </div>
-    <router-view />
+<div id='app'>
+  <div id='nav'>
+    <ul>
+      <li><router-link to='/'>Home</router-link></li>
+      <li><router-link to='/model'>Model</router-link></li>
+      <li><router-link to='/comp'>Comp</router-link></li>
+      <li><router-link to='/event'>Event</router-link></li>
+    </ul>
   </div>
+  <router-view/>
+</div>
 </template>
 
 <style lang="stylus">
@@ -21,8 +20,15 @@
   text-align center
   color #2c3e50
   margin-top 60px
-.splead
-  display inline-flex
-  margin 0 4px
-  color gray
+#nav
+  ul
+    display inline-flex
+    list-style none
+    li
+      margin 0 8px
+      a
+        text-decoration none
+        color gray
+        font-size 1.4rem
+
 </style>
