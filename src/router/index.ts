@@ -27,6 +27,11 @@ const routes: Array<RouteConfig> = [
     path: '/event',
     name: 'Event',
     component: () => import('../views/Event.vue')
+  },
+  {
+    path: '/data',
+    name: 'Data',
+    component: () => import('../views/Data.vue')
   }
 ]
 

@@ -2,14 +2,53 @@
   <div class="object">
     <h2>Loop</h2>
     <table>
-      <tr v-for="(item, index) in objArray" v-bind:key="index">
+      <tr v-for="(item, index) in objArray" :key="index">
         <td>{{ item.name }}</td>
         <td>{{ item.price }}</td>
       </tr>
     </table>
 
-    <p>Change data</p>
-    <button v-on:click="pushItem">pushItem</button>
+    <h3>Change data</h3>
+
+    <!-- 先頭に追加 -->
+    <div class="change-data-mol">
+      <button v-on:click="Splice">Splice</button>
+      <p>先頭追加：
+        <code>this.objArray.splice("", 0, { name: "New item", price: 100 });</code>
+      </p>
+    </div>
+    <!-- 末尾に追加 -->
+    <div class="change-data-mol">
+      <button v-on:click="PushList">PushList</button>
+      <p>末尾追加：
+        <code>this.objArray.push({name: '末尾アイテム', price: 200});</code>
+      </p>
+    </div>
+
+    <!-- 先頭変更 -->
+    <div class="change-data-mol">
+      <button v-on:click="ChangeList">ChangeList</button>
+      <p>先頭変更：
+        <code></code>
+      </p>
+    </div>
+
+    <!-- 先頭削除 -->
+    <div class="change-data-mol">
+      <button v-on:click="DelList">DelList</button>
+      <p>先頭削除：
+        <code></code>
+      </p>
+    </div>
+
+    <!-- 全削除 -->
+    <div class="change-data-mol">
+      <button v-on:click="DelAll">DelAll</button>
+      <p>全削除：
+        <code></code>
+      </p>
+    </div>
+
   </div>
 </template>
 
@@ -25,10 +64,22 @@ export default {
     };
   },
   methods: {
-    pushItem() {
-      // this.objArray.push({ name: "New item", price: 100 })
-      this.objArray.splice("", 0, { name: "New item", price: 100 });
-    }
+    Splice() {
+      // this.objArray.push({ name: "先頭アイテム", price: 100 })
+      this.objArray.splice('index', 0, { name: "New item", price: 100 });
+    },
+    PushList() {
+      this.objArray.push({name: '末尾アイテム', price: 200});
+    },
+    ChangeList() {
+      this.objArray.splice('index', 1, { name: "Change item", price: 666 });
+    },
+    DelList() {
+      this.objArray.splice('index', 1);
+    },
+    DelAll() {
+      this.objArray.splice('index', this.objArray.length);
+    },
   }
 };
 </script>
@@ -46,4 +97,27 @@ export default {
     padding 8px 12px
     border 1px solid #ccc
     white-space nowrap
+
+button
+  padding 8px 16px
+  background-color transparent
+  border 2px solid gray
+  border-radius 8px
+  width 120px
+  margin auto
+  cursor pointer
+  transition .2s
+  &:hover
+    background-color lightgrey
+  &:focus
+    border-radius 0
+
+.change-data-mol
+  display flex
+  justify-content center
+  flex-direction: column
+code
+  background-color lighten(teal, 90%)
+  padding 4px 8px
+  border-radius 4px
 </style>

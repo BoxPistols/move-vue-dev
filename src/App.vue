@@ -6,6 +6,7 @@
       <li><router-link to='/model'>Model</router-link></li>
       <li><router-link to='/comp'>Comp</router-link></li>
       <li><router-link to='/event'>Event</router-link></li>
+      <li><router-link to='/data'>Data</router-link></li>
     </ul>
   </div>
   <router-view/>
