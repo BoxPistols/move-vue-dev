@@ -18,11 +18,20 @@
           <code>this.objArray.splice("", 0, { name: "New item", price: 100 });</code>
         </p>
       </div>
+
       <!-- 末尾に追加 -->
       <div class="change-data-mol">
         <button v-on:click="PushList">PushList</button>
         <p>末尾追加：
           <code>this.objArray.push({name: '末尾アイテム', price: 200});</code>
+        </p>
+      </div>
+
+      <!-- 指定追加 -->
+      <div class="change-data-mol">
+        <button v-on:click="SpliceListIndex(2)">SpliceListIndex</button>
+        <p>指定追加：
+          <code>this.objArray.splice(index, 0, {name: '指定アイテム', price: 111});</code>
         </p>
       </div>
 
@@ -66,17 +75,20 @@ export default {
     };
   },
   methods: {
-    Splice() {
+    Splice() { // 先頭追加
       // this.objArray.push({ name: "先頭アイテム", price: 100 })
       this.objArray.splice('index', 0, { name: "New item", price: 100 });
     },
-    PushList() {
+    PushList() { // 最後に追加
       this.objArray.push({name: '末尾アイテム', price: 200});
     },
-    ChangeList() {
+    SpliceListIndex(v) { // 指定箇所で追加
+      this.objArray.splice(v, 0, {name: '指定アイテム', price: 111});
+    },
+    ChangeList() { // 変更 1番目アイテム
       this.objArray.splice('index', 1, { name: "Change item", price: 666 });
     },
-    DelList() {
+    DelList() { // 削除 1番目
       this.objArray.splice('index', 1);
     },
     DelAll() {
@@ -105,7 +117,8 @@ button
   background-color transparent
   border 2px solid gray
   border-radius 8px
-  width 120px
+  width auto
+  min-width 120px
   margin auto
   cursor pointer
   transition .2s
