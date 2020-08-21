@@ -9,44 +9,46 @@
     </table>
 
     <h3>Change data</h3>
+    <div class="change-data-org">
 
-    <!-- 先頭に追加 -->
-    <div class="change-data-mol">
-      <button v-on:click="Splice">Splice</button>
-      <p>先頭追加：
-        <code>this.objArray.splice("", 0, { name: "New item", price: 100 });</code>
-      </p>
-    </div>
-    <!-- 末尾に追加 -->
-    <div class="change-data-mol">
-      <button v-on:click="PushList">PushList</button>
-      <p>末尾追加：
-        <code>this.objArray.push({name: '末尾アイテム', price: 200});</code>
-      </p>
-    </div>
+      <!-- 先頭に追加 -->
+      <div class="change-data-mol">
+        <button v-on:click="Splice">Splice</button>
+        <p>先頭追加：
+          <code>this.objArray.splice("", 0, { name: "New item", price: 100 });</code>
+        </p>
+      </div>
+      <!-- 末尾に追加 -->
+      <div class="change-data-mol">
+        <button v-on:click="PushList">PushList</button>
+        <p>末尾追加：
+          <code>this.objArray.push({name: '末尾アイテム', price: 200});</code>
+        </p>
+      </div>
 
-    <!-- 先頭変更 -->
-    <div class="change-data-mol">
-      <button v-on:click="ChangeList">ChangeList</button>
-      <p>先頭変更：
-        <code></code>
-      </p>
-    </div>
+      <!-- 先頭変更 -->
+      <div class="change-data-mol">
+        <button v-on:click="ChangeList">ChangeList</button>
+        <p>先頭変更：
+          <code>this.objArray.splice('index', 1, { name: "Change item", price: 666 })</code>
+        </p>
+      </div>
 
-    <!-- 先頭削除 -->
-    <div class="change-data-mol">
-      <button v-on:click="DelList">DelList</button>
-      <p>先頭削除：
-        <code></code>
-      </p>
-    </div>
+      <!-- 先頭削除 -->
+      <div class="change-data-mol">
+        <button v-on:click="DelList">DelList</button>
+        <p>先頭削除：
+          <code>this.objArray.splice('index', 1);</code>
+        </p>
+      </div>
 
-    <!-- 全削除 -->
-    <div class="change-data-mol">
-      <button v-on:click="DelAll">DelAll</button>
-      <p>全削除：
-        <code></code>
-      </p>
+      <!-- 全削除 -->
+      <div class="change-data-mol">
+        <button v-on:click="DelAll">DelAll</button>
+        <p>全削除：
+          <code>this.objArray.splice('index', this.objArray.length);</code>
+        </p>
+      </div>
     </div>
 
   </div>
@@ -107,15 +109,23 @@ button
   margin auto
   cursor pointer
   transition .2s
-  &:hover
+  &:hove
     background-color lightgrey
   &:focus
     border-radius 0
 
-.change-data-mol
-  display flex
-  justify-content center
-  flex-direction: column
+.change-data
+  &-org
+    max-width 768px
+    display flex
+    flex-wrap wrap
+    margin auto
+  &-mol
+    display flex
+    justify-content center
+    p
+      margin-left 4px
+
 code
   background-color lighten(teal, 90%)
   padding 4px 8px
