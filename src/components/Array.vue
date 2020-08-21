@@ -112,20 +112,20 @@ export default {
     border 1px solid #ccc
     white-space nowrap
 
-button
-  padding 8px 16px
-  background-color transparent
-  border 2px solid gray
-  border-radius 8px
-  width auto
-  min-width 120px
-  margin auto
-  cursor pointer
-  transition .2s
-  &:hove
-    background-color lightgrey
-  &:focus
-    border-radius 0
+// button
+//   padding 8px 16px
+//   background-color transparent
+//   border 2px solid gray
+//   border-radius 8px
+//   width auto
+//   min-width 120px
+//   margin auto
+//   cursor pointer
+//   transition .2s
+//   &:hove
+//     background-color lightgrey
+//   &:focus
+//     border-radius 0
 
 .change-data
   &-org
@@ -136,11 +136,12 @@ button
   &-mol
     display flex
     justify-content center
+    align-items center
     p
       margin-left 4px
 
 code
-  background-color lighten(teal, 90%)
+  background-color lighten(gray, 90%)
   padding 4px 8px
   border-radius 4px
 </style>

@@ -21,6 +21,7 @@
   text-align center
   color #2c3e50
   margin-top 60px
+
 #nav
   ul
     display inline-flex
@@ -31,5 +32,27 @@
         text-decoration none
         color gray
         font-size 1.4rem
+
+button
+  box-sizing border-box
+  margin 4px
+  line-height calc(36px / 2)
+  height 36px
+  background-color transparent
+  border 2px solid gray
+  border-radius 8px
+  width auto
+  min-width 120px
+  cursor pointer
+  transition .2s
+  &:hove
+    background-color lightgrey
+  &:focus
+    border-radius 0
+
+code
+  background-color lighten(gray, 90%)
+  padding 4px 8px
+  border-radius 4px
 
 </style>
