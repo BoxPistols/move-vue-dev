@@ -1,15 +1,11 @@
 <template>
-<div>
-  <h2>Computed</h2>
-</div>
+  <div>
+    <h2>Computed</h2>
+  </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
-
-</style>
+<style></style>

@@ -13,14 +13,16 @@
     <section>
       <h3>User -> Like only 1Click</h3>
       <p>Count: {{ count }}</p>
-      <button value="いいね" @click="addLike" v-bind:disabled="isLike">Plus</button>
+      <button value="いいね" @click="addLike" v-bind:disabled="isLike">
+        Plus
+      </button>
     </section>
   </div>
 </template>
 
 <script>
 function likeAction() {
-  alert()
+  alert();
 }
 
 export default {
@@ -28,21 +30,21 @@ export default {
     return {
       count: 0,
       isLike: false
-    }
+    };
   },
   methods: {
     countUp() {
-      this.count++
+      this.count++;
     },
-    countUpFn(val){
-      this.count += val
+    countUpFn(val) {
+      this.count += val;
     },
     addLike() {
-      this.isLike = true
-      likeAction()
+      this.isLike = true;
+      likeAction();
     }
   }
-}
+};
 </script>
 
 <style scoped lang="stylus">
@@ -61,5 +63,4 @@ p
 section
   padding 12px 24px
   border 1px solid #eee
-
 </style>

@@ -17,31 +17,29 @@ export default {
     return {
       // myArray: ["one", "two", "three", "four", "five"],
       myArray: [1, 2, 3, 4, 5]
-    }
+    };
   },
   methods: {
     sortData(v) {
       v.sort(function(a, b) {
-        return (a < b ? -1 : 1)
-      })
+        return a < b ? -1 : 1;
+      });
     },
     sortDataRv(v) {
       v.sort(function(a, b) {
-        return (a > b ? -1 : 1)
-      })
+        return a > b ? -1 : 1;
+      });
     },
     evenData() {
-      this.myArray = this.myArray.filter(
-        function(v) {
-          return v % 2 == 0
-        }
-      )
+      this.myArray = this.myArray.filter(function(v) {
+        return v % 2 == 0;
+      });
     },
     clearData() {
-      this.myArray = [1, 2, 3, 4, 5]
-    },
+      this.myArray = [1, 2, 3, 4, 5];
+    }
   }
-}
+};
 </script>
 
 <style lang="stylus" scoped>

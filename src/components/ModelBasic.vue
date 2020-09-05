@@ -1,10 +1,8 @@
 <template>
   <div class="model">
-
     <h1>This is an about page</h1>
 
     <div class="contents">
-
       <section>
         <h2>Form / Model</h2>
 
@@ -39,9 +37,7 @@
         <br />
         CheckBox is: {{ myCheckBox }}
         <h3>Agree</h3>
-        <label>
-          <input type="checkbox" v-model="myAgree" />同意します
-        </label>
+        <label> <input type="checkbox" v-model="myAgree" />同意します </label>
         <!-- <button :disabled="myAgree===false">送信</button> -->
         <button :disabled="!myAgree">送信</button>
       </section>
@@ -60,23 +56,23 @@
           Green
           <input type="radio" value="green" v-model="myRadio" />
         </label>
-        <p>Select: {{ myRadio }}</p>img
-        <img v-bind:src=" 'img/' +  myRadio + '.jpg'" alt="myRadio" />
+        <p>Select: {{ myRadio }}</p>
+        img
+        <img v-bind:src="'img/' + myRadio + '.jpg'" alt="myRadio" />
       </section>
-
     </div>
 
     <div class="contents">
       <section>
         <h3>Select</h3>
         <p>複数選択時はドラッグでエリア選択かCtrl押しながら</p>
-        <p :style="{color: mySelectColor}">選択カラー={{ mySelectColor }}</p>
+        <p :style="{ color: mySelectColor }">選択カラー={{ mySelectColor }}</p>
         <select v-model="mySelectColor" multiple>
-        <option value disabled>選択してください</option>
-        <option value="red">Red</option>
-        <option value="blue">Blue</option>
-        <option value="green">Green</option>
-        <option value="orange">Orange</option>
+          <option value disabled>選択してください</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="orange">Orange</option>
         </select>
       </section>
 
@@ -102,27 +98,27 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        // v-model
-        myModel: '',
-        myTextArea: '',
-        myCheckBox: [],
-        myAgree: false,
-        myRadio: 'red',
-        // mySelectColor: ""
-        mySelectColor: [],
-        myText: 'Hello',
-        myTextNum: 0
-      }
-    },
-    methods: {
-      showAlert() {
-        alert('')
-      }
+export default {
+  data() {
+    return {
+      // v-model
+      myModel: "",
+      myTextArea: "",
+      myCheckBox: [],
+      myAgree: false,
+      myRadio: "red",
+      // mySelectColor: ""
+      mySelectColor: [],
+      myText: "Hello",
+      myTextNum: 0
+    };
+  },
+  methods: {
+    showAlert() {
+      alert("");
     }
   }
+};
 </script>
 
 <style scoped lang="stylus">

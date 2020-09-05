@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <section>
       <h2 :style="{ color: myColor }">Attribute(属性)</h2>
       <p>
@@ -13,10 +12,9 @@
 
     <section>
       <h2>Class</h2>
-      <p :class="[{'through': throughOn}]">Bind Class by Data</p>
-      <p :class="['hoge', {'moge': moge}]">Bind Multi Class</p>
+      <p :class="[{ through: throughOn }]">Bind Class by Data</p>
+      <p :class="['hoge', { moge: moge }]">Bind Multi Class</p>
     </section>
-
   </div>
 </template>
 
@@ -34,7 +32,7 @@ export default {
       moge: true,
       // v-model
       myModel: "",
-      myTextArea: '',
+      myTextArea: ""
     };
   }
 };

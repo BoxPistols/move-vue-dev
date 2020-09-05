@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-
     <img alt="Vue logo" src="../assets/logo.png" />
     <!-- <Bool /> -->
     <div class="contents">
@@ -8,7 +7,6 @@
         <Attribute />
       </div>
     </div>
-
   </div>
 </template>
 
@@ -21,7 +19,7 @@ export default {
   name: "Home",
   components: {
     // Bool,
-    Attribute,
+    Attribute
   }
 };
 </script>
