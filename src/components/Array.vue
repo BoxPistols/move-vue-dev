@@ -144,5 +144,4 @@ export default {
     align-items center
     p
       margin-left 4px
-
 </style>

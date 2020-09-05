@@ -25,25 +25,25 @@ export default {
   data() {
     return {
       price: 100,
-      budget: 300,
-    }
+      budget: 300
+    };
   },
   computed: {
     calcTax() {
       if (this.price > this.budget) {
-        return '予算オーバー'
+        return "予算オーバー";
       }
-      return Math.floor(this.price * 1.1)
+      return Math.floor(this.price * 1.1);
     },
 
     setColor() {
       if (this.price > this.budget) {
-        return 'crimson'
+        return "crimson";
       }
-      return null
-    },
-  },
-}
+      return null;
+    }
+  }
+};
 </script>
 
 <style lang="stylus" scoped="scoped">
