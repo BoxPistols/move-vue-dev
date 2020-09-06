@@ -1,23 +1,23 @@
 <template>
-  <div>
-    <h2>Calc Tax</h2>
-    <div class="lay_price">
-      <div class="org_price fx-c">
-        <div class="mol_price">
-          予算
-          <input v-model.number="budget" type="number" />
-        </div>
-        <div class="mol_price">
-          価格
-          <input v-model.number="price" type="number" />
-        </div>
+<div>
+  <h2>Calc Tax</h2>
+  <div class="lay_price">
+    <div class="org_price fx-c">
+      <div class="mol_price">
+        予算
+        <input v-model.number="budget" type="number" />
       </div>
-      <div class="org_price" :style="{ color: setColor }">
-        <p>価格：{{ price }}</p>
-        <p>税込：{{ calcTax }}</p>
+      <div class="mol_price">
+        価格
+        <input v-model.number="price" type="number" />
       </div>
     </div>
+    <div class="org_price" :style="{ color: setColor }">
+      <p>価格：{{ price }}</p>
+      <p>税込：{{ calcTax }}</p>
+    </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       price: 100,
-      budget: 300
+      budget: 150
     };
   },
   computed: {
@@ -42,14 +42,28 @@ export default {
       }
       return null;
     }
-  }
+  },
+  watch: {
+    price() {
+      const vm = this
+      setTimeout(() => {
+        vm.price = 100
+        vm.budget = 150
+      }, 2000);
+    },
+  },
+
 };
 </script>
 
-<style lang="stylus" scoped="scoped">
+<style lang="stylus" scoped>
 @import "../assets/utility.styl"
-input[type="number"]
+
+input[type="number"] {
   width 50px
-.mol_price
+}
+
+.mol_price {
   margin 4px 12px
+}
 </style>
