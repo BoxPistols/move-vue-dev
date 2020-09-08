@@ -3,6 +3,7 @@
   <h2>Calc Tax</h2>
   <div class="lay_price">
     <div class="org_price fx-c">
+      <!-- <div class="mol_price">Set Timer</div> -->
       <div class="mol_price">
         予算
         <input v-model.number="budget" type="number" />
@@ -26,38 +27,37 @@ export default {
     return {
       price: 100,
       budget: 150
-    };
+    }
   },
   computed: {
     calcTax() {
       if (this.price > this.budget) {
-        return "予算オーバー";
+        return '予算オーバー'
       }
-      return Math.floor(this.price * 1.1);
+      return Math.floor(this.price * 1.1)
     },
 
     setColor() {
       if (this.price > this.budget) {
-        return "crimson";
+        return 'crimson'
       }
-      return null;
+      return null
     }
   },
-  watch: {
-    price() {
-      const vm = this
-      setTimeout(() => {
-        vm.price = 100
-        vm.budget = 150
-      }, 2000);
-    },
-  },
-
-};
+  // watch: {
+  //   price() {
+  //     const vm = this
+  //     setTimeout(() => {
+  //       vm.price = 100
+  //       vm.budget = 150
+  //     }, 4500)
+  //   }
+  // }
+}
 </script>
 
 <style lang="stylus" scoped>
-@import "../assets/utility.styl"
+@import "../assets/utility.styl";
 
 input[type="number"] {
   width 50px

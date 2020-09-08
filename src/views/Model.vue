@@ -1,8 +1,8 @@
 <template>
-  <div class="model">
-    <model-basic />
-    <model-bool />
-  </div>
+<div class="model">
+  <model-basic />
+  <model-bool />
+</div>
 </template>
 
 <script>
@@ -22,3 +22,4 @@ export default {
 </script>
 
 <style scoped="scoped" lang="stylus"></style>
+e
