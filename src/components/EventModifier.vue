@@ -9,7 +9,7 @@
         <!-- <a @click="noLink" href="https://google.com">preventDefault on google</a> -->
         <a @click.prevent href="https://google.com">.prevent on google</a>
       </p>
-      <p><input @keyup.enter="myKey" type="text">KeyEvent enter</p>
+      <p><input @keyup.enter="myKey" type="text" />KeyEvent enter</p>
     </div>
   </div>
 </template>
@@ -19,26 +19,25 @@ export default {
   data() {
     return {
       x: 0,
-      y: 0,
-    }
+      y: 0
+    };
   },
   methods: {
     point(event, dv) {
-      this.x = event.clientX / dv
-      this.y = event.clientY / dv
+      this.x = event.clientX / dv;
+      this.y = event.clientY / dv;
     },
     noEvent(e) {
-      e.stopPropagation()
+      e.stopPropagation();
     },
     noLink(e) {
-      e.preventDefault()
+      e.preventDefault();
     },
-    myKey(){
-      alert("key")
+    myKey() {
+      alert("key");
     }
-
-  },
-}
+  }
+};
 </script>
 
 <style scoped lang="stylus">

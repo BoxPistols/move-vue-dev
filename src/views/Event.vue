@@ -1,20 +1,20 @@
 <template>
   <div>
     <event-basic />
-    <event-modifier/>
+    <event-modifier />
   </div>
 </template>
 
 <script>
-import EventBasic from '@/components/EventBasic.vue'
-import EventModifier from '@/components/EventModifier.vue'
+import EventBasic from "@/components/EventBasic.vue";
+import EventModifier from "@/components/EventModifier.vue";
 
 export default {
   components: {
     EventBasic,
-    EventModifier,
-  },
-}
+    EventModifier
+  }
+};
 </script>
 
 <style scoped lang="stylus"></style>

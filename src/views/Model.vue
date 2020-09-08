@@ -1,8 +1,8 @@
 <template>
-<div class="model">
-  <model-basic />
-  <model-bool />
-</div>
+  <div class="model">
+    <model-basic />
+    <model-bool />
+  </div>
 </template>
 
 <script>
