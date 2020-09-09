@@ -1,8 +1,17 @@
 <template>
   <div>
     <div class="org__list">
-      <button @click="hasList = !hasList">hasList</button>
-      <button @click="removeObj">hasList</button>
+      <div class="mol__list">
+        <button @click="hasList = !hasList">hasList</button>
+      </div>
+
+      <div class="mol__list">
+        <button @click="removeObj">removeObj</button>
+      </div>
+
+      <div class="mol__list">
+        <button @click="addObj">addObj</button>
+      </div>
 
       <ul class="mol__list" v-for="(value, key, index) in objects" :key="key">
         <li>{{ index }} - {{ key }} : {{ value }}</li>
@@ -12,17 +21,13 @@
 
       <ul class="mol__list" v-for="(list, index) in lists" :key="list.id">
         <li>{{ index }}:{{ list.name }}</li>
-        <button>Rm</button>
+        <input type="text" />
       </ul>
       <!-- <hr> -->
 
       <template v-if="hasList">
         <hr />
-        <ul
-          class="mol__list"
-          v-for="(list, key, index) in lists"
-          :key="list.id"
-        >
+        <ul class="mol__list" v-for="(list, key, index) in lists" :key="list.id">
           <li>
             {{ index }}
             {{ key }}:{{ list.name }}
@@ -42,30 +47,36 @@ export default {
       lists: [
         {
           id: 1,
-          name: "Apple"
+          name: 'Apple'
         },
         {
           id: 2,
-          name: "Banana"
+          name: 'Banana'
         },
         {
           id: 3,
-          name: "Melon"
+          name: 'Melon'
         }
       ],
       objects: {
-        firstName: "yamada",
-        lastName: "Taro",
+        firstName: 'yamada',
+        lastName: 'Taro',
         age: 21
       }
-    };
+    }
   },
   methods: {
     removeObj() {
-      this.lists.shift();
+      this.lists.shift()
+    },
+    addObj() {
+      this.lists.push({
+        id: 3,
+        name: 'New Fruit'
+      })
     }
   }
-};
+}
 </script>
 
 <style scoped="scoped"></style>
