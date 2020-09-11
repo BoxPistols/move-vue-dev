@@ -34,7 +34,7 @@
         <ul class="mol__list" v-for="(list, key, index) in lists" :key="list">
           <li>
             {{ index }}
-            {{ key }}:{{ list.name }}
+            {{ key }}:{{ list.name }}{{ item }}
           </li>
         </ul>
         <hr />
@@ -63,6 +63,11 @@ const ft = [
 ]
 
 export default {
+  props:{
+    item:{
+      type: String,
+    }
+  },
   data() {
     return {
       hasList: false,
@@ -93,4 +98,6 @@ export default {
 }
 </script>
 
-<style scoped="scoped"></style>
+<style scoped="scoped" lang="stylus">
+@import "../assets/utility.styl";
+</style>
