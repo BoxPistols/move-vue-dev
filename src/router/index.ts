@@ -33,6 +33,11 @@ const routes: Array<RouteConfig> = [
     path: "/data",
     name: "Data",
     component: () => import("../views/Data.vue")
+  },
+  {
+    path: "/object",
+    name: "Object",
+    component: () => import("../views/Object.vue")
   }
 ];
 

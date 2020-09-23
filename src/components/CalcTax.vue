@@ -1,23 +1,24 @@
 <template>
-<div>
-  <h2>Calc Tax</h2>
-  <div class="lay_price">
-    <div class="org_price fx-c">
-      <div class="mol_price">
-        予算
-        <input v-model.number="budget" type="number" />
+  <div>
+    <h2>Calc Tax</h2>
+    <div class="lay_price">
+      <div class="org_price fx-c">
+        <!-- <div class="mol_price">Set Timer</div> -->
+        <div class="mol_price">
+          予算
+          <input v-model.number="budget" type="number" />
+        </div>
+        <div class="mol_price">
+          価格
+          <input v-model.number="price" type="number" />
+        </div>
       </div>
-      <div class="mol_price">
-        価格
-        <input v-model.number="price" type="number" />
+      <div class="org_price" :style="{ color: setColor }">
+        <p>価格：{{ price }}</p>
+        <p>税込：{{ calcTax }}</p>
       </div>
-    </div>
-    <div class="org_price" :style="{ color: setColor }">
-      <p>価格：{{ price }}</p>
-      <p>税込：{{ calcTax }}</p>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -42,22 +43,21 @@ export default {
       }
       return null;
     }
-  },
-  watch: {
-    price() {
-      const vm = this
-      setTimeout(() => {
-        vm.price = 100
-        vm.budget = 150
-      }, 2000);
-    },
-  },
-
+  }
+  // watch: {
+  //   price() {
+  //     const vm = this
+  //     setTimeout(() => {
+  //       vm.price = 100
+  //       vm.budget = 150
+  //     }, 4500)
+  //   }
+  // }
 };
 </script>
 
 <style lang="stylus" scoped>
-@import "../assets/utility.styl"
+@import "../assets/utility.styl";
 
 input[type="number"] {
   width 50px
