@@ -1,6 +1,7 @@
 <template>
 <div>
   <h2 :class="classObj">Event</h2>
+  <h2 :class="[classObj, teal]">Event Sub</h2>
   <!-- <h2 :class="{red: isActive, bgCol: !isActive}">Event</h2> -->
   <div class="toggled">
     <button @click="isActive = !isActive">Toggle</button>
@@ -39,6 +40,7 @@ export default {
       isLike: false,
       isActive: false,
       //classObj: true
+      teal: 'teal'
     };
   },
   methods: {
@@ -54,11 +56,10 @@ export default {
     }
   },
   computed: {
-
     classObj() {
       return {
         red: this.isActive,
-        'bgCol': !this.isActive
+        'bg-col': !this.isActive
       }
     }
   }
@@ -70,11 +71,15 @@ export default {
   display flex flex-direction column
 }
 
+.teal {
+  color: teal
+}
+
 .red {
   color: darken(crimson, 30%)
 }
 
-.bgCol {
+.bg-col {
   background: lighten(crimson, 50%)
 }
 
